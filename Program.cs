@@ -11,6 +11,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+        // Configuration without web builder since this is a console app.
         IConfiguration config = new ConfigurationBuilder()
           .SetBasePath(AppContext.BaseDirectory)
           .AddJsonFile("appsettings.json", optional: false)
