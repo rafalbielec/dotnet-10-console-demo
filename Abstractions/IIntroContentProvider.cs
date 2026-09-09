@@ -1,6 +1,8 @@
+using Extra;
+
 namespace Abstractions;
 
 public interface IIntroContentProvider
 {
-    string GetIntroArt();
+    ReferenceResult<string> GetIntroArt();
 }

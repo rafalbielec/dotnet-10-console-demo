@@ -13,5 +13,12 @@ static class ConsoleExtensions
             Console.WriteLine($"{title}");
             Console.ResetColor();
         }
+
+        public static void WriteLineWarning(string message)
+        {
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            Console.WriteLine($"{message}");
+            Console.ResetColor();
+        }
     }
 }

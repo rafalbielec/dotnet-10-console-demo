@@ -8,6 +8,9 @@ public class Greeter(IIntroContentProvider provider) : IGreeter
     public void RunIntro()
     {
         var text = provider.GetIntroArt();
-        Console.WriteLineIntro(text);
+        if (text.Success)
+        {
+            Console.WriteLineIntro(text.Value);
+        }
     }
 }

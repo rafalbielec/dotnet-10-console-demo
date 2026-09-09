@@ -7,7 +7,7 @@ namespace Implementations;
 
 public class IntroContentProvider(IOptions<AppOptions> options) : IIntroContentProvider
 {
-    public string GetIntroArt()
+    public ReferenceResult<string> GetIntroArt()
     {
         var name = options.Value.IntroFile;
         var file = new FileInfo(name);
@@ -16,6 +16,6 @@ public class IntroContentProvider(IOptions<AppOptions> options) : IIntroContentP
             return File.ReadAllText(file.FullName);
         }
 
-        return null;
+        return new Error(ErrorCode.BrokenIntroFile);
     }
 }
