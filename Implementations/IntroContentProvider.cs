@@ -1,13 +1,16 @@
 using System.IO;
 using Abstractions;
+using Extra;
+using Microsoft.Extensions.Options;
 
 namespace Implementations;
 
-public class IntroContentProvider : IIntroContentProvider
+public class IntroContentProvider(IOptions<AppOptions> options) : IIntroContentProvider
 {
     public string GetIntroArt()
     {
-        var file = new FileInfo("intro.txt");
+        var name = options.Value.IntroFile;
+        var file = new FileInfo(name);
         if (file.Exists)
         {
             return File.ReadAllText(file.FullName);
