@@ -35,7 +35,8 @@ internal class Program
 
         Action<PosixSignalContext> quit = context =>
         {
-            Console.WriteLineWarning("Application stopped");
+            Console.Clear();
+            Console.WriteLineWarning("Application has been stopped.");
             context.Cancel = true;
             ctx.Cancel();
         };

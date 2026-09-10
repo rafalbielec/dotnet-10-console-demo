@@ -1,6 +1,6 @@
 namespace Extra;
 
-public enum ErrorCode { BrokenIntroFile };
+public enum ErrorCode { BrokenIntroFile = 1 };
 public readonly record struct Error(ErrorCode code, string message = null);
 
 public class ReferenceResult<T> where T : class

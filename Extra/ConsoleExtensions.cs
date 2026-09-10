@@ -1,4 +1,5 @@
 using System;
+using Extra;
 
 static class ConsoleExtensions
 {
@@ -18,6 +19,17 @@ static class ConsoleExtensions
         {
             Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine($"{message}");
+            Console.ResetColor();
+        }
+
+        public static void WriteLineError(Error error)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"Error code: {error.code}");
+            if (!string.IsNullOrWhiteSpace(error.message))
+            {
+                Console.WriteLine($"Error message: {error.message}");
+            }
             Console.ResetColor();
         }
     }

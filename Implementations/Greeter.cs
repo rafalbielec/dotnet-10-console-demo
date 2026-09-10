@@ -11,6 +11,10 @@ public class Greeter(IIntroContentProvider provider) : IGreeter
         if (text.Success)
         {
             Console.WriteLineIntro(text.Value);
+            return;
         }
+
+        Console.WriteLineError(text.Error);
+        Environment.Exit((int)text.Error.code);
     }
 }
