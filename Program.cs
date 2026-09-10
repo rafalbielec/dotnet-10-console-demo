@@ -9,6 +9,7 @@ using Extra;
 using Microsoft.Extensions.Options;
 using System.Threading;
 using System.Threading.Tasks;
+using Examples;
 
 internal class Program
 {
@@ -27,7 +28,8 @@ internal class Program
 
         services.AddSingleton<IOptions<AppOptions>>(Options.Create(appConfig));
         services.AddSingleton<IIntroContentProvider, IntroContentProvider>();
-        services.AddTransient<IMenuRunner, MenuRunner>();
+        services.AddSingleton<IMenuRunner, MenuRunner>();
+        services.AddSingleton<IExample, GCExample>();
         services.AddSingleton<IGreeter, Greeter>();
 
         using var provider = services.BuildServiceProvider();
@@ -39,6 +41,7 @@ internal class Program
             Console.WriteLineWarning("Application has been stopped.");
             context.Cancel = true;
             ctx.Cancel();
+            Environment.Exit(0);
         };
 
         // Register hooks for both Ctrl+C (SIGINT) and termination signals (SIGTERM)

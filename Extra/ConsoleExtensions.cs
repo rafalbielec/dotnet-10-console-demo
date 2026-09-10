@@ -11,14 +11,21 @@ static class ConsoleExtensions
         public static void WriteLineIntro(string title)
         {
             Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.WriteLine($"{title}");
+            Console.WriteLine(title);
             Console.ResetColor();
         }
 
         public static void WriteLineWarning(string message)
         {
             Console.ForegroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine($"{message}");
+            Console.WriteLine(message);
+            Console.ResetColor();
+        }
+
+        public static void WriteLineInformation(string message)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(message);
             Console.ResetColor();
         }
 
