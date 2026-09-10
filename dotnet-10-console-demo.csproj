@@ -24,4 +24,7 @@
       <CopyToPublishDirectrory>PreserveNewest</CopyToPublishDirectrory>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Examples\*.cs" LogicalName="%(Filename)"/>
+  </ItemGroup>
 </Project>

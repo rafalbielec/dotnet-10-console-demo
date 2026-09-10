@@ -30,6 +30,7 @@ internal class Program
         services.AddSingleton<IIntroContentProvider, IntroContentProvider>();
         services.AddSingleton<IMenuRunner, MenuRunner>();
         services.AddSingleton<IExample, GCExample>();
+        services.AddSingleton<IExample, SpanAndMemoryExample>();
         services.AddSingleton<IGreeter, Greeter>();
 
         using var provider = services.BuildServiceProvider();
