@@ -10,7 +10,7 @@ No AI was used in this project. Coded by hand with Neovim on macOS.
 
 ![Console app](dotnet10.jpg)
 
-![Neovim](neovim.jpg)
+![Neovim](nvim.jpg)
 
 ## Urls
 
