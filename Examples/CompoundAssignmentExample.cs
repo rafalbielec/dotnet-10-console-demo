@@ -20,7 +20,7 @@ public class CompoundAssignmentExample : IExample
 
         public override string ToString()
         {
-            return $"{Value:0.00}";
+            return $"{Value:F2}";
         }
     }
 
