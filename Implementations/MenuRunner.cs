@@ -29,7 +29,12 @@ public class MenuRunner(IEnumerable<IExample> examples) : IMenuRunner
             if (keyDict.ContainsKey(key))
             {
                 Console.Clear();
+
                 var example = ex[keyDict[key]];
+                var source = example.SourceCode;
+                Console.WriteLineInformation(source);
+                Console.WriteLine();
+
                 await example.RunExampleAsync();
                 Console.WriteLine();
             }

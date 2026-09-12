@@ -2,7 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Abstractions;
 
-namespace Exaples;
+namespace Examples;
 
 public partial class ConstructorExample
 {
