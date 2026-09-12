@@ -10,6 +10,8 @@ using Microsoft.Extensions.Options;
 using System.Threading;
 using System.Threading.Tasks;
 using Examples;
+using System.Reflection;
+using System.Linq;
 
 internal class Program
 {
@@ -29,9 +31,17 @@ internal class Program
         services.AddSingleton<IOptions<AppOptions>>(Options.Create(appConfig));
         services.AddSingleton<IIntroContentProvider, IntroContentProvider>();
         services.AddSingleton<IMenuRunner, MenuRunner>();
-        services.AddSingleton<IExample, GCExample>();
-        services.AddSingleton<IExample, SpanAndMemoryExample>();
         services.AddSingleton<IGreeter, Greeter>();
+
+        // Pull all IExamples via reflection
+        var examples = Assembly.GetExecutingAssembly().GetTypes()
+          .Where(t => typeof(IExample).IsAssignableFrom(t) && t is { IsInterface: false })
+          .ToArray();
+
+        foreach (Type t in examples)
+        {
+            services.AddTransient(typeof(IExample), t);
+        }
 
         using var provider = services.BuildServiceProvider();
         using var ctx = new CancellationTokenSource();
