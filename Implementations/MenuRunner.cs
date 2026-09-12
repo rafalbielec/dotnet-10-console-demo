@@ -33,6 +33,10 @@ public class MenuRunner(IEnumerable<IExample> examples) : IMenuRunner
                 await example.RunExampleAsync();
                 Console.WriteLine();
             }
+            else
+            {
+                Console.Clear();
+            }
         }
     }
 }
