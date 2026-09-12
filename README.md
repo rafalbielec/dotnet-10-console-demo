@@ -1,6 +1,6 @@
 # .NET 10 Console Demo
 
-A hand-crafted C# console app with some of the latest features of .NET 10. Work in progress.
+A hand-crafted C# console app with some of the latest features of .NET 10. I took some of the latest features of C# to practise new constructs.
 
 ## No AI
 

@@ -9,7 +9,6 @@ using Extra;
 using Microsoft.Extensions.Options;
 using System.Threading;
 using System.Threading.Tasks;
-using Examples;
 using System.Reflection;
 using System.Linq;
 
