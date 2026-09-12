@@ -32,7 +32,7 @@ public class MenuRunner(IEnumerable<IExample> examples) : IMenuRunner
 
                 var example = ex[keyDict[key]];
                 var source = example.SourceCode;
-                Console.WriteLineInformation(source);
+                Console.WriteLineCode(source);
                 Console.WriteLine();
 
                 await example.RunExampleAsync();

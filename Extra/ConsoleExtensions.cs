@@ -29,6 +29,13 @@ static class ConsoleExtensions
             Console.ResetColor();
         }
 
+        public static void WriteLineCode(string message)
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine(message);
+            Console.ResetColor();
+        }
+
         public static void WriteLineError(Error error)
         {
             Console.ForegroundColor = ConsoleColor.Red;
